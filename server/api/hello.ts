@@ -1,3 +1,3 @@
 export default defineEventHandler(() => {
-  return { message: 'ciao dal backend bello!' }
+  return { message: 'ciao dal backend!' }
 })
