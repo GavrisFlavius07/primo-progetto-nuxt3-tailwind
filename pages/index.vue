@@ -1,31 +1,22 @@
 <template>
-  <div>
-    <h1>Home Page</h1>
-    <HelloWorld msg="Ciao dalla pagina Index!" />
-    <HelloWorld :msg="message"/>
-    <NuxtLink to="/about">Vai a About</NuxtLink>
+  <div class="min-h-screen flex items-center justify-center bg-gray-100 relative">
+    <AuthForm title="Login" buttonText="Entra" @submit="handleLogin">
+      Non hai un account?
+      <NuxtLink to="/register" class="text-blue-500 hover:underline">Registrati</NuxtLink>
+    </AuthForm>
+
+    <SuccessToast v-if="showToast" message="Login effettuato!" />
   </div>
-
-  
-
-  <div class="min-h-screen bg-slate-100 text-center p-10">
-  <h1 class="text-4xl font-bold text-blue-600">tailwind funziona?</h1>
-  </div>
-
 </template>
 
-
 <script setup lang="ts">
+import AuthForm from '~/components/AuthForm.vue'
+import SuccessToast from '~/components/successToast.vue'
 
-import { ref, onMounted } from 'vue'
-import HelloWorld from '~/components/HelloWorld.vue'
+const showToast = ref(false)
 
-const message = ref('caricamento...')
-
-onMounted(async () => {
-    const res = await fetch('/api/hello')
-    const data = await res.json();
-    message.value = data.message
-})
-
+const handleLogin = (data: { email: string; password: string }) => {
+  console.log('Login con:', data)
+  showToast.value = true
+}
 </script>
