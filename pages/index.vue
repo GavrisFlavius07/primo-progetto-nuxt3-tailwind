@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 flex flex-col items-center justify-center p-8">
-    <h1 class="text-5xl font-extrabold text-blue-800 mb-4">Benvenuto su TaskHero</h1>
+    <h1 class="text-5xl font-extrabold text-blue-800 mb-4">Benvenuto su Sito</h1>
     <p class="text-lg text-blue-700 text-center mb-8 max-w-xl">
-      Organizza le tue attività quotidiane in modo semplice ed efficace. Registrati, accedi e inizia subito!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. At veniam nulla minus beatae rem iure, officiis suscipit esse? Facilis voluptate expedita vero officiis eos, quae harum ex similique quas cum. Registrati, accedi e inizia subito!
     </p>
 
     <NuxtLink

@@ -10,13 +10,19 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import AuthForm from '~/components/AuthForm.vue'
 import SuccessToast from '~/components/successToast.vue'
 
+const router = useRouter()
 const showToast = ref(false)
 
 const handleLogin = (data: { email: string; password: string }) => {
-    console.log('Login con:', data)
-    showToast.value = true
+  console.log('Login con:', data)
+  showToast.value = true
+  setTimeout(() => {
+    navigateTo('/areaPersonale') // Vai alla dashboard
+  }, 1000)
 }
+
 </script>
